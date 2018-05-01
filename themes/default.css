@@ -1,0 +1,126 @@
+/* ======================================================================
+ *
+ *                               General
+ *
+ * =================================================================== */
+
+
+.flexT-command {
+    position: relative;
+    height: 60px;
+}
+
+.flexT-switch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    margin: 14px 14px 0 14px;
+    padding: 0 7px;
+    border-radius: 5px;
+    background-color: rgba(160, 160, 160, 1);
+    border: 0;
+    outline: 0;
+    font-size: 1em; color: white;
+    cursor: pointer;
+}
+.flexT-switch:before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -10px;
+    border-style: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: rgba(160, 160, 160, 1) transparent transparent transparent;
+}
+
+.flexT-switch:hover:before {
+    opacity: 1;
+}
+
+.flexT-select {
+    z-index: 2;
+    position: absolute;
+    left: 14px;
+    top: 74px;
+    max-width: 100%;
+	color: white;
+    cursor: pointer;
+}
+.flexT-options,
+.flexT-options:after {
+    height: 50px;
+}
+
+.flexT-options {
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    vertical-align: middle;
+    margin-bottom: 1px;
+    padding: 16px 14px 7px 50px;
+    background: rgba(160, 160, 160, 1);
+    text-overflow: ellipsis;
+}
+.flexT-options:after,
+.flexT-options.flexT-fold:after {
+    content:"";
+    display: table-cell;
+    position: absolute;
+    top: 0;
+    left: 6px;
+    width: 35px;
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+.flexT-options:after {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANkAAADZCAYAAACtvpV2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAhxJREFUeNrs20EKgzAQQFEtuZe5WXM0PdnUQty2oFiS9D2YvTH5EBfOETEB93l4BSAyEBkgMhAZiAwQGYgMRAaIDEQGiAxEBiIDRAYiA5EBIgORgcgAkYHIAJGByEBkgMhAZCAyQGQgMkBkIDIQGSAyEBn8g9TgM+U6cMZaR2RfIns6K1wMzXURfJMBIgORASIDkYHIAJGByEBkgMhAZCAyQGQgMkBk8FNp4LVtU2M/7/FR3mcRWV/egRVntxtl1MhcF0FkIDJAZCAyEBkgMhAZiAwQGYgMEBmIDEQGiAxEBiIDRAYiA5F5BSAyEBkgMhAZiAwQGYgMRAaIDEQGiAxEBiIDRAYiA5EBIgORgcgAkYHIAJGByEBkgMhAZCAyQGQgMkBkIDIQGSAyEBmIDBAZiAxEBogMRAaIDEQGIgNEBiIDkQEiA5EBIgORgcgAkYHIQGSAyEBkIDJAZCAyQGQgMhAZIDIQGYgMEBmIDBAZiAxEBogMRAYiA0QGIgORASIDkQEiA5GByACRgchAZIDIQGTAIQ28trxPscVd7ZfIOrPUAddFEBkgMhAZiAwQGYgMEBmIDEQGiAxEBiIDRAYiA0QGt2vxp83VtjDS+ZkjwraA6yKIDBAZiAxEBogMRAYiA0QGIgNEBiIDkQEiA5GByACRgchAZIDIQGSAyEBkIDJAZCAyEBkgMhAZIDIQGYgMEBmIDEQGXPMSYACnmRI1sobo+AAAAABJRU5ErkJggg==);
+opacity: 0.5;
+}
+.flexT-options.flexT-fold:after {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANkAAADZCAYAAACtvpV2AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA8tJREFUeNrs3eFt2kAYgGGn4j8ZgQ3oBnEmSDboCt2gHqEjpBs0E4Ru0E6QFcwE7lk9pKqVWjD+yJ15HulTJOKgxPYrDOLIzTAMDRDnnV0AIgORASIDkYHIAJGByEBkgMhAZIDIQGQgMkBkIDIQGSAyEBmIDBAZiAwQGYgMRAaIDEQGIgNEBiIDRAYiA5EBIgORwTVYFfg7tXlgil0ekf0nsk/OFc4MzeUieE4GiAxEBogMRAYiA0QGIgORASIDkYHIAJGByACRwUWtFvy3fWsKW7zHP7Vp7kRWlzGwzrlbjW6pkblcBJGByACRgchAZIDIQGQgMkBkIDJAZCAyEBkgMhAZiAwQGYgMRGYXgMgo28YuEBnzatM8penTDGle89c+397aRSJjmts0X9O8pPmQZv3H99f59pe83a1dJjJOC2yX5uHI7R/y9kITGScEtj3x57aNT3AWGWGB/R5aJzKICezgo8ggLrDR+ILIo8ggJrCD9yKDuMAO9ysyBBYU2NUTGZcIrBcZAot9BPsuMgQWZ9/8epuVyBBYkM+ekyGwOD8a7/gQmcBCA2vtbpEJLDaw3i4X2TE2AhOYyOY1niBPzbJW/gpMZMWciEtc+SswkRV1Ii5t5a/ARFaMKSfitvDQBCayYnTNeSt/SwxNYCIryrkrd0sLTWAiK8q4Ync9w/2UEprARFacOVfsvnVoAhNZsS8ONAsITWAiuyqXDk1gIitaX3loAhNZ8SJX7EaHJjCRVWF8e9S+wtAEJrKqRK/cnTs0gYmsOl0+oWoITWAiq1ZbQWgCE1nV+sJDE5jIhBYYmsBEJrTA0AQmMqEFhiYwkQktMDSBiUxogaEJTGRCCwxtIzCRCS02tFeBiUxodROYyIQmMJEJrc7QBCYyoQlMZNQZmsBEJjSBiYw6QxOYyIQmMJFRZ2gCE5nQBCYy6gxNYCITmsBERp2hCUxkQgsMTWAiIzA0gYmMwNAEJjICQxOYyAgMTWAiIzA0gYmMCaE9H7n9s8BExrTQHtPcp/nS/P0/0vb59vu8ncAqtrIL3tQuDx7JAJGByEBkgMhAZIDIQGQgMkBkIDIQGSAyEBkgMhAZiAwQGYgMRAaIDMq05E+ratN0DnFVx0tklbnLAy4XQWSAyEBkIDJAZCAyQGQgMhAZIDIQGYgMEBmIDBAZhCtx0ebOYWFJ58/NMAwOC7hcBJEBIgORgcgAkYHIQGSAyEBkgMhAZCAyQGQgMhAZIDIQGYgMEBmIDBAZiAxEBogMRAYiA0QGIgNEBiIDkQEiA5GByIDz/BRgANJ1FGPIpQU1AAAAAElFTkSuQmCC);
+    opacity: 1;
+}
+
+
+
+/* ======================================================================
+ *
+ *                                 Debug
+ *
+ * =================================================================== */
+
+
+.flexT-closer {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.debug-rowspan,
+.debug-colspan,
+.debug-rowspan-colspan {
+    color: white !important;
+}
+
+.debug-rowspan {
+    background: #00baf0 !important;
+}
+
+.debug-colspan {
+    background: #ffa000 !important;
+}
+
+.debug-rowspan-colspan {
+    background: #eb0088 !important;
+}
