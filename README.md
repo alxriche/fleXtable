@@ -21,7 +21,7 @@ fleXtable ( string $tableId, array $columnsToMask, string $windowSize [, bool $d
 * maximum width for trigger: if screen width is less than equal to this value fleXtable is triggered;
 * debug mode (optional): if set to true, will add different background colors to .
 
-You can find a full [demo here](https://codepen.io/alexisr/pen/e168105c29f9fc8950a4e1150b35c9a3). More details on [my blog](https://alx.design).
+You can find a full [demo here](https://codepen.io/alexisr/pen/e168105c29f9fc8950a4e1150b35c9a3). More details on [my blog](https://alx.design/article/10-flextable).
 
 ## Next features
 
